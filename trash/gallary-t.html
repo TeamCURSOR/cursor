@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Template</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/design.css">
+	    
+	    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	    <link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+		<!-- Header -->		
+			<header >  			  
+			  	<!--Navigation -->
+				<div class="logo-badge ">				
+					<img class="logo" src="images/cursor1.svg" alt="CURSOR LOGO">
+					<!-- <div class="logo-text">
+						<a  href="#home"> 
+							<span>Cursor</span> 
+						</a>					
+					</div> -->
+				</div>	
+				<nav id="m_nav" class="m_nav" >		 				 			
+	  				
+	  				<div>
+		  				<a class="" href="index.html"> 
+		  					<span>HOME</span> 
+		  				</a>
+	  				</div>
+	  				<div>
+		  				<a class="" href="news.html"> 
+		  					<span>News</span> 
+		  				</a>
+	  				</div>
+	  				<div>
+		  				<a class="" href="gallary.html"> 
+		  					<span><strike>Gallary</strike></span> 
+		  				</a>
+	  				</div>
+	  				<div>
+		  				<a class="" href="about_us.html"> 
+		  					<span>About Us</span> 
+		  				</a>
+	  				</div>
+				 </nav>
+				 <div class="menu " onclick="nav_menu_toggle()">
+				 	<a class="mobile-toggle">
+			            <span></span>
+			            <span></span>
+			            <span></span>
+				    </a>	
+				 </div>
+				 						
+			</header>
+
+		<!-- !PAGE CONTENT! -->
+		<div  class="contents" >
+			<section  class="page-title dark-bck">
+				<h1><span>PHOTO GALLARY</span></h1>
+				<p class="para">Some of our moments of past.</p>
+				
+			</section >
+			
+			<!-- <section class="gallary "> -->
+				<!-- Photo Grid -->
+				<div class="gal-row dark-bck" id="myGrid" style="margin-bottom:128px">
+				  <div class="gal-third">
+				    <img src="../w3images/rocks.jpg" style="width:100%" onclick="onClick(this)">
+				    <img src="../w3images/sound.jpg" style="width:100%" onclick="onClick(this)">
+				    <img src="../w3images/woods.jpg" style="width:100%">
+				    <img src="../w3images/rock.jpg" style="width:100%">
+				    <img src="../w3images/nature.jpg" style="width:100%">
+				    <img src="../w3images/mist.jpg" style="width:100%">
+				  </div>
+
+				  <div class="gal-third">
+				    <img src="../w3images/coffee.jpg" style="width:100%">
+				    <img src="../w3images/bridge.jpg" style="width:100%">
+				    <img src="../w3images/notebook.jpg" style="width:100%">
+				    <img src="../w3images/london.jpg" style="width:100%">
+				    <img src="../w3images/rocks.jpg" style="width:100%">
+				    <img src="../w3images/avatar_g.jpg" style="width:100%">
+				  </div>
+
+				  <div class="gal-third">
+				    <img src="../w3images/mist.jpg" style="width:100%">
+				    <img src="../w3images/workbench.jpg" style="width:100%">
+				    <img src="../w3images/gondol.jpg" style="width:100%">
+				    <img src="../w3images/skies.jpg" style="width:100%">
+				    <img src="../w3images/lights.jpg" style="width:100%">
+				    <img src="../w3images/workshop.jpg" style="width:100%">
+				  </div>
+				</div>
+				  
+				  <!-- Modal for full size images on click-->
+				  <div id="modal01" class="modal g-center" style="padding-top:0" onclick="this.style.display='none'">
+				    <span class="g3-display-topright">×</span>
+				    <div class="modal-content">
+				      <img id="img01" class="">
+				      <p id="caption"></p>
+				    </div>
+				  </div>
+			<!-- </section> -->
+			
+		<!-- End Page Content -->
+		</div>
+		<!-- Footer -->
+		<footer class=""> 
+			<div class="">
+				<i class="fa fa-facebook-official w3-hover-opacity"></i>
+				<i class="fa fa-instagram w3-hover-opacity"></i>
+				<i class="fa fa-snapchat w3-hover-opacity"></i>
+				<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+				<i class="fa fa-twitter w3-hover-opacity"></i>
+				<i class="fa fa-linkedin w3-hover-opacity"></i>
+				<p>Made by <a href="#" target="_blank" class="w3-hover-text-green">Code Freaks</a></p>
+			</div>
+		  
+		</footer>
+		<script src="jquery/jquery-3.2.1.min.js"></script>
+	    <script type="text/javascript" src="js/home.js"></script>
+		<script>
+		// Toggle grid padding
+		function myFunction() {
+		    var x = document.getElementById("myGrid");
+		    if (x.className === "w3-row") {
+		        x.className = "w3-row-padding";
+		    } else { 
+		        x.className = x.className.replace("w3-row-padding", "w3-row");
+		    }
+		}
+
+		// Modal Image Gallery
+		function onClick(element) {
+		  document.getElementById("img01").src = element.src;
+		  document.getElementById("modal01").style.display = "block";
+		  var captionText = document.getElementById("caption");
+		  captionText.innerHTML = element.alt;
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,353 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>Gallery2</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/design.css">
+      <script src="../jquery/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/home.js"></script>
+      <script src = "../jquery/jquery-2.1.4.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                 //your code for stuff should go here
+                 $('#Fullscreen').css('height', $(document).outerWidth() + 'px');
+                 //for when you click on an image
+                 $('.myImg').click(function(){
+                     var src = $(this).attr('src'); //get the source attribute of the clicked image
+                     $('#Fullscreen img').attr('src', src); //assign it to the tag for your fullscreen div
+                     $('#Fullscreen').fadeIn();
+                 });
+                 $('#Fullscreen').click(function(){
+                     $(this).fadeOut(); //this will hide the fullscreen div if you click away from the image. 
+                 });
+            });
+        </script>
+        <style>
+            #MainImages {
+                width: 80%;
+                height: 500px;
+             }
+                 #MainImages img {
+                     cursor: pointer;
+                     height: 70%;
+                 }
+            #Fullscreen {
+                 width: 80%;
+                 display: none;
+                 position:fixed;
+                 top:0;
+                 right:0;
+                 bottom:0;
+                 left:0;
+                 /* I made a 50% opacity black tile background for this 
+                 div so it would seem more... modal-y*/
+                 background: transparent url('c49.jpg') repeat; 
+             }
+             #Fullscreen img {
+                display: block;
+                height: 50%;
+                margin: 0 auto;
+             }
+        </style>
+        <style type="text/css">
+    *{
+  margin:0;
+  padding:20;
+}
+body{
+  font-family:arial,sans-serif;
+  font-size:100%;
+  margin:0em;
+  background:#333333;
+}
+h2,p{
+  font-size:100%;
+  font-weight:normal;
+}
+ul,li{
+  list-style:none;
+}
+ul{
+  overflow:hidden;
+  padding:3em;
+}
+ul li a{
+  background-attachment:scroll;
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:inline-block;
+  height:12em;
+  width:15em;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+ul li{
+  margin:1em;
+  float:left;
+}
+ul li h2{
+  font-size:140%;
+  font-weight:bold;
+  padding-bottom:10px;
+}
+ul li p{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
+}
+ul li a{
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
+ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:10px;
+  background:white;
+}
+ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:white;
+}
+ul li:nth-child(5n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+  background: white;
+}
+img{
+  width: 100%;
+}
+ul li a:hover,ul li a:focus{
+  box-shadow:10px 10px 7px rgba(0,0,0,.0);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,0);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,0);
+  -webkit-transform: scale(1.90);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+ol{text-align:center;}
+ol li{display:inline;padding-right:1em;}
+ol li a{color:#fff;}
+  </style>
+ </head>
+ <body>
+ <!-- Header -->    
+      <header >          
+          <!--Navigation -->
+        <div class="logo-badge ">       
+          <img class="logo" src="images/cursor1.svg" alt="CURSOR LOGO">
+          <!-- <div class="logo-text">
+            <a  href="#home"> 
+              <span>Cursor</span> 
+            </a>          
+          </div> -->
+        </div>  
+        <nav id="m_nav" class="m_nav" >                 
+            
+            <div>
+              <a class="" href="index.html"> 
+                <span>HOME</span> 
+              </a>
+            </div>
+            <div>
+              <a class="" href="news.html"> 
+                <span>News</span> 
+              </a>
+            </div>
+            <div>
+              <a class="" href="gallary.html"> 
+                <span><strike>Gallery</strike></span> 
+              </a>
+            </div>
+            <div>
+              <a class="" href="about_us.html"> 
+                <span>About Us</span> 
+              </a>
+            </div>
+         </nav>
+         <div class="menu " onclick="nav_menu_toggle()">
+          <a class="mobile-toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+            </a>  
+         </div>
+                    
+      </header>
+ <div  class="contents" >
+      <section  class="page-title dark-bck">
+        <h1><span>PHOTO GALLERY</span></h1>
+        <p class="para">Some of our moments of past.</p>
+        
+      </section >
+ 
+ 
+</head>
+
+<body>
+<div id="MainImages">
+<ul>
+    <li>
+      <a href="#">
+        <img src="images/c25.jpg" alt="" class="myImg"/>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="images/c26.jpg" alt="" class="myImg"/>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="images/c27.jpg" alt="" class="myImg"/>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="images/c28.jpg" alt="" class="myImg"/>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="images/c29.jpg" alt="" class="myImg"/>
+      </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c30.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c31.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c32.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c33.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c34.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c35.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c36.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+     <li>
+        <a>
+         <img src="images/c37.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+     <li>
+        <a>
+         <img src="images/c38.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+     <li>
+        <a>
+         <img src="images/c39.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+     <li>
+        <a>
+         <img src="images/c40.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c41.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+<li>
+        <a>
+         <img src="images/c42.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c43.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+        <a>
+         <img src="images/c44.jpg" alt="" class="myImg"/>
+         </a>
+    </li>
+    <li>
+    <a>
+         <img src="images/c45.jpg" alt="" class="myImg"/> 
+    </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="images/c46.jpg" alt="" class="myImg"/>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="images/c47.jpg" alt="" class="myImg"/>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="images/c50.jpg" alt="" class="myImg"/>
+      </a>
+    </li>
+    </ul>
+  </div>
+    <div id="Fullscreen">
+            <img src="" alt="" />
+          </div>
+ 
+    <div  style="clear:both;" align="center" class="text">
+  <li><a href="gallary.html" class="current">1</a></li>
+  <li><a href="gallary1.html">2</a></li>
+  </div>
+ 
+    </div>
+    <footer class=""> 
+      <div class="">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <p>Made by <a href="#" target="_blank" class="w3-hover-text-green">Code Freaks</a></p>
+      </div>
+      
+    </footer>
+  </body>
+</html>
