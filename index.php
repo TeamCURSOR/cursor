@@ -66,7 +66,7 @@
 		  </div>
 		  <div class="column middle ">
 		  	<div class="evntposter">
-		    	<img src="../images/comp_dept.jpg">
+		    	<img src="images/comp_dept.jpg">
 		    </div>
 		  </div>
 		</div>

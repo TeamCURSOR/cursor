@@ -265,7 +265,7 @@
 			<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 			<!-- <script src="jquery/jquery-3.2.1.min.js"></script>  -->
 			<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js'></script> -->
-			<script src='js/velocity.min.js'></script>
+			<script src='js/lib/velocity.min.js'></script>
 			<!-- <script type="text/javascript" src="js/home.js"></script> -->
 			<script src="js/slider.js"></script>
 	</body>
