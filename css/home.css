@@ -45,6 +45,7 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-family:arial,sans-serif;
     background-color: #333;
+    background-color: #212121;
     margin: 0;
 }
 nav a, button{
@@ -135,7 +136,8 @@ width: 80px;
 
 .row{
 /*background-color: #1b1b1bb3;*/
-background-color: #212121;
+/*z-index: -2;*/
+/*background-color: #212121;*/
 }
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
@@ -181,104 +183,154 @@ background-color: #212121;
 
 /*           */
 
-            #project {
-                position: relative;
-                display: block;
-                margin: 0 auto;
-                width: 100vw;
-                height: 100vh;
-            }
-            .introduction-text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                height: auto;
-            /*    min-width: 1050px;
-            */    -webkit-transform: translate3d(-50%, -50%, 0);
-                -moz-transform: translate3d(-50%, -50%, 0);
-                transform: translate3d(-50%, -50%, 0);
-                z-index: 9999;
-            }
-            .vertical-text.vertical-project {
-                top: 22px;
-            }
-            .vertical-text {
-                position: absolute;
-                width: 92px;
-                top: 76px;
-                left: -10px;
-                -webkit-transform: translateY(200%) rotate(-90deg) skewX(15deg);
-                -moz-transform: translateY(200%) rotate(-90deg) skewX(15deg);
-                transform: translateY(200%) rotate(-90deg) skewX(15deg);
-                transform-origin: bottom left;
-                opacity: 0;
-            }
-            .main-project h1 {
-                font-size: 80px;
-                margin: 0;
-                padding-left: 0;
-            }
-            .dark-copy {
-                color: #212121;
-            }
-            .main-project h2 {
-                font-size: 20px;
-                font-family: "Gilroy-Black",sans-serif;
-                margin-top: -16px;
-                padding-left: 0;
-            }
-            /*.line-scroll-down-container {
-                position: absolute;
-                width: 2px;
-                height: 50px;
-                bottom: 20px;
-                left: calc(50vw - 1px);
-                overflow: hidden;
-                z-index: 999;
-                opacity: 0;
-            }*/
-            .massive-typo.typo-intro {
-                opacity: 0;
-                -webkit-transform: scale(1.2);
-                -moz-transform: scale(1.2);
-                transform: scale(1.2);
-            }
-            .typo-about-us {
-                background-image: url("../ai_svg/ABOUT_US_05.svg");
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: 85vw;
-            }
-            .typo-home {
-                background-image: url("../ai_svg/CURSOR_05.svg");
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: 85vw;
-            }
-            .typo-events {
-                background-image: url("../ai_svg/EVENTS_05.svg");
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: 85vw;
-            }
-            .typo-gallary {
-                background-image: url("../ai_svg/GALLARY_05.svg");
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: 85vw;
-            }
-            .typo-news {
-                background-image: url("../ai_svg/NEWS_1_05.svg");
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: 85vw;
-            }
-            .massive-typo {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100%;
-                z-index: 2;
-                overflow: hidden;
-            }
+#project {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+}
+.introduction-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+/*    min-width: 1050px;
+*/    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 9999;
+}
+.vertical-text.vertical-project {
+    top: 22px;
+}
+.vertical-text {
+    position: absolute;
+    width: 92px;
+    top: 76px;
+    left: -10px;
+    -webkit-transform: translateY(200%) rotate(-90deg) skewX(15deg);
+    -moz-transform: translateY(200%) rotate(-90deg) skewX(15deg);
+    transform: translateY(200%) rotate(-90deg) skewX(15deg);
+    transform-origin: bottom left;
+    opacity: 0;
+}
+
+.main-project h1 {
+ /*   font-size: 80px;*/
+    margin: 0;
+    padding-left: 0;
+     white-space: nowrap; 
+}
+
+@media screen and (min-width: 600px){
+      .main-project h1 {
+        font-size: 80px;
+    }
+}
+
+.dark-copy {
+    color: #212121;
+}
+.main-project h2 {
+    font-size: 20px;
+    font-family: "Gilroy-Black",sans-serif;
+    margin-top: -16px;
+    padding-left: 0;
+}
+            @media screen and (max-width: 600px){
+    .main-project h2 {
+        font-size: 14px ;
+        margin-top: -2px ;
+    }
+}
+/*.line-scroll-down-container {
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    bottom: 20px;
+    left: calc(50vw - 1px);
+    overflow: hidden;
+    z-index: 999;
+    opacity: 0;
+}*/
+.massive-typo.typo-intro {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.typo-about-us {
+    background-image: url("../ai_svg/ABOUT_US_05.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 85vw;
+}
+.typo-home {
+    background-image: url("../ai_svg/CURSOR_05.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 85vw;
+}
+.typo-events {
+    background-image: url("../ai_svg/EVENTS_05.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 85vw;
+}
+.typo-gallary {
+    background-image: url("../ai_svg/GALLARY_05.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 85vw;
+}
+.typo-news {
+    background-image: url("../ai_svg/NEWS_1_05.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 85vw;
+}
+.typo-contact {
+    background-image: url("../ai_svg/CONTACT_05.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 85vw;
+
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    z-index: -1;
+    top: -150px;
+}
+.typo-members {
+    background-image: url("../ai_svg/MEMBERS_05.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 85vw;
+
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    z-index: -1;
+    top: -200px;
+}
+.massive-typo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+}
+.massive-typo-text{
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    clear: both;
+}

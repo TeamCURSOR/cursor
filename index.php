@@ -34,7 +34,7 @@
 
 	    <div id="project" class="white" style="height: 70vh;">  
 	      <div class="introduction-text">
-	        <div class="vertical-text vertical-project dark-copy" style="/*! opacity: 1; */ /*! transform: matrix(0, -1, 1.03527, 0, 0, 0); */">2017-18
+	        <div class="vertical-text vertical-project dark-copy" style=" opacity: 1;  /*! transform: matrix(0, -1, 1.03527, 0, 0, 0); */">2017-18
 	        </div>
 	        <div class="intro-main main-project"> 
 	          <h1 class="dark-copy">
@@ -58,6 +58,7 @@
 
 		<div class="row">
 			<header>
+		    	<h2 style="margin:70px;"></h2>
 		    	<h2>ABOUT</h2>
 			</header>
 		  <div class="column middle">
@@ -73,6 +74,7 @@
 
 		<div class="row">
 			<header>
+		    	<h2 style="margin:70px;"></h2>
 		    	<h2>EVENTS</h2>
 			</header>
 
@@ -99,7 +101,7 @@
 			</header>			
 			 <div class="column full">
 			    <?php
-			    	include"gallary_section.php";
+			    	include"gallery_section.php";
 			    ?>
 		    </div>
 		</div>
@@ -116,8 +118,8 @@
 	      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	    <script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+	      <script src='js/lib/jquery/jquery-3.2.1.min.js'></script>
+	    <script src='js/lib/modernizr.min.js'></script>
 	    <script src="js/folding_cards.js"></script>
 	</body>
 </html>

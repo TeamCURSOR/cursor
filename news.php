@@ -59,7 +59,7 @@
 
     <div class="row">
       <header>
-          <h2>NEWS</h2>
+          <h2></h2>
       </header>
 
       <div class="column ">
@@ -132,9 +132,9 @@
     
 
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-
     <script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+    <script src='js/lib/jquery/jquery-3.2.1.min.js'></script>
+    <script src='js/lib/modernizr.min.js'></script>
     <script src="js/folding_cards.js"></script>
   </body>
 </html>

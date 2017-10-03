@@ -59,7 +59,7 @@
     
     <div class="row">
       <header>
-          <h2>Events</h2>
+          <h2></h2>
       </header>
 
       <div class="column full">
