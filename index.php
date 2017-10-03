@@ -61,13 +61,16 @@
 		    	<h2 style="margin:70px;"></h2>
 		    	<h2>ABOUT</h2>
 			</header>
-		  <div class="column middle">
-		  	<h3>CURSOR</h3>
-		    <p>We are the students organization of computer department of GEC. With the sole mission to improve technical sckills of students we strive to organise Events and workshop for students.</p>
+		  <div class="column middle" style="padding: 0 5%; line-height: 2em">
+		  	<h3 style="color: #e70538;">CURSOR</h3>
+		    <p>We are the students organization of computer department of GEC.</p>
+		    <p> Department has helped inculcate a conducive environment in the campus which ignites young minds that prepare engineeringrs who could find technical solution to daily life problems.</p>
+		    <p> The sole mission of CURSOR is to imporve technical skills of students for which we promote and hold various technical events throughout the year and provide young minds with infinite opportunities.</p>
+		    <p> The events held include various technical workshops, hackathon codies(coding events) technical talks etc.</p>
 		  </div>
 		  <div class="column middle ">
 		  	<div class="evntposter">
-		    	<img src="images/comp_dept.jpg">
+		    	<img src="images/undefined/comp_dept.jpg">
 		    </div>
 		  </div>
 		</div>
@@ -78,8 +81,9 @@
 		    	<h2>EVENTS</h2>
 			</header>
 
-		  <div class="column full" style="text-align: center;">
-		    <h1 style="font-size: 6em ; color: #363535">Coming Soon</h1>
+		   <div class="column full" style="height: 500px;padding:0 10%;">
+		      <img style="opacity: .2; margin-top:200px; margin-top:20vh" src="images/ai_svg/COMING_SOON.svg">
+      </div>
 		  </div>
 		</div>
 
@@ -105,16 +109,10 @@
 			    ?>
 		    </div>
 		</div>
-
-		<div class="footer">
-	        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-			<!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
-			<!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
-			<!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
-			<i class="fa fa-twitter w3-hover-opacity"></i>
-			<!-- <i class="fa fa-linkedin w3-hover-opacity"></i> -->
-		  	<p>Made by <a href="#" target="_blank">Code Freaks</a></p>
-		</div>
+<?php
+include "footer.php";
+?>
+		
 	      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

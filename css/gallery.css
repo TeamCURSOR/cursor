@@ -22,7 +22,7 @@ ul{
   color: #000;
   background: #fff;
   display: inline-block;
-  min-height: 13em;
+  min-height: auto;
   max-width: 20em;
   padding: .5em;
   -moz-box-shadow: 5px 5px 7px rgba(33,33,33,1);
@@ -37,6 +37,12 @@ ul{
   margin: 3em;
   float:left;
 }
+@media screen  and (max-width: 600px)
+{
+  .photo{
+    margin:3em 0 ;
+  }
+}
 .photo h2{
   font-size:140%;
   font-weight:bold;
@@ -47,9 +53,9 @@ ul{
   font-size:180%;
 }
 .photo div a {
-    -webkit-transform: rotate(90deg) !important;
+/*    -webkit-transform: rotate(90deg) !important;
     transform: rotate(60deg);
-    position: absolute;
+    position: absolute;*/
 }
 
 .photo div{

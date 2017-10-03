@@ -72,7 +72,7 @@ font-family: "Raleway", Arial, sans-serif;
           transform: rotate(45deg) translateZ(0px);
 }
 #list li figure > div > div {
-  background: url(../images/cursor_members1.jpg) no-repeat;
+  background: url(../images/undefined/cursor_members1.jpg) no-repeat;
   background-size: cover;
   background-position: 0px 0px;
   position: absolute;
@@ -136,6 +136,13 @@ font-family: "Raleway", Arial, sans-serif;
   opacity: 1 !important;
   -webkit-transform: scale(2) translateZ(0px) !important;
           transform: scale(2) translateZ(0px) !important;
+}
+@media screen and (max-width: 600px)
+{
+  .active{
+      -webkit-transform: scale(1.5) translateZ(0px) !important;
+      transform: scale(1.5) translateZ(0px) !important;
+  }
 }
 
 .cf:before,
@@ -460,6 +467,15 @@ color: grey;
   font-size: 30px;
   line-height: 70px;
   text-align: center;
+  
+  white-space: nowrap;
+   font-size: 1.2em;
+}
+@media screen and (min-width: 600px)
+{
+  .contact_info{
+    font-size: 2em;
+  }
 }
 
 .contact_info .left{

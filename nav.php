@@ -1,6 +1,6 @@
 		<div class="topnav">
 			<div class="logo-badge ">				
-				<img class="logo" src="images/cursor1.svg" alt="CURSOR LOGO">
+				<img class="logo" src="images/undefined/cursor1.svg" alt="CURSOR LOGO">
 			</div>
 
 <!-- 			<button class="hamburger">&#9776;</button>

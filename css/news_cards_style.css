@@ -37,6 +37,16 @@ div.cards {
   /*max-width: 960px;*/
   text-align: center;
 }
+
+@media screen and (min-width: 1400px)
+{
+  div.cards {
+    margin:100px auto 80px auto;
+    padding: 70px;
+  }
+}
+
+
 div.card {
   background: #ffffff;
   display: inline-block;
@@ -52,6 +62,13 @@ div.card {
   transition: all 0.3s 0s ease-in;
   z-index: 1;
 /*    height : 300px;*/
+}
+@media screen and (min-width: 1000px)
+{
+
+div.card {
+margin: 50px;
+}
 }
 .card:hover {
     box-shadow: 0 8px 16px 0 rgb(77, 77, 77);

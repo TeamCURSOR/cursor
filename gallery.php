@@ -33,13 +33,13 @@
     include "nav.php";
   ?>
 
-    <div id="project" class="green" style="height: 70vh;">  
+    <div id="project" class="green" style="height: 40vh;">  
       <div class="introduction-text">
         <div class="vertical-text vertical-project dark-copy" style="/*! opacity: 1; */ /*! transform: matrix(0, -1, 1.03527, 0, 0, 0); */">2017-18
         </div>
         <div class="intro-main main-project"> 
           <h1 class="dark-copy">
-            <div style="position: relative; display: inline-block; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">GALLERY
+            <div style=" position: relative; display: inline-block; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);  " >Gallery
             </div>
           </h1> 
           <h2 class="dark-copy">
@@ -119,12 +119,13 @@
       <header>
                 <h2 style="margin:70px;"></h2>
           <h2>Photo Gallery</h2>
+          <pre style="font-size: 14px; color: white;">under beta</pre>
       </header>
 
       <div class="column ">
       	<ul>
       		<?php
-      			$queryy="SELECT * FROM `media` Limit 10 OFFSET 20;";
+      			$queryy="SELECT * FROM `media` WHERE `grp_id` not in ('undefined', 'ai_svg', 'events') GROUP BY `grp_id` Limit 10  ";
       			$result = $conn->query($queryy);
 
       			if($result->num_rows >0)
@@ -135,7 +136,7 @@
 	      	<li class="photo">
 	      		<div>
 	      			<img src="<?php echo $row['media_path']."/".$row['media_name'] ?>">
-	      			<a >Photo</a>
+	      			<a ><?php echo $row['grp_id'];?></a>
 	      		</div>
 	      	</li>
       		<?php
@@ -147,15 +148,9 @@
       </div>
 
     </div>
-    <div class="footer">
-          <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
-      <!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
-      <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <!-- <i class="fa fa-linkedin w3-hover-opacity"></i> -->
-        <p>Made by <a href="#" target="_blank">Code Freaks</a></p>
-    </div>
+<?php
+include "footer.php";
+?>
     
   </body>
 </html>

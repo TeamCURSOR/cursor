@@ -62,8 +62,8 @@
           <h2></h2>
       </header>
 
-      <div class="column full">
-      	<ul>
+      <div class="column full" style="height: 500px;padding:0 10%;">
+      	<!-- <ul>
       		<?php
       			/*$queryy="SELECT * FROM `event` join `event_coordinator` on `event`.`event_id` = `event_coordinator`.`event_id` join `coordinator` on `event_coordinator`.`coordinator_id` =`coordinator`.`id`";*/
 
@@ -106,19 +106,15 @@
       			}
           }
       		?>
-	    </ul>
+	    </ul> -->
+
+      <img style="opacity: .2; margin-top:200px; margin-top:20vh" src="images/ai_svg/COMING_SOON.svg">
       </div>
 
     </div>
-    <div class="footer">
-          <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
-      <!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
-      <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <!-- <i class="fa fa-linkedin w3-hover-opacity"></i> -->
-        <p>Made by <a href="#" target="_blank">Code Freaks</a></p>
-    </div>
+<?php
+include "footer.php";
+?>
     
   </body>
 </html>

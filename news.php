@@ -33,7 +33,7 @@
     include "nav.php";
   ?>
     
-    <div id="project" class="blue" style="height: 70vh;">  
+    <div id="project" class="blue" style="height: 40vh;">  
       <div class="introduction-text">
         <div class="vertical-text vertical-project dark-copy" style="/*! opacity: 1; */ /*! transform: matrix(0, -1, 1.03527, 0, 0, 0); */">2017-18
         </div>
@@ -63,7 +63,7 @@
       </header>
 
       <div class="column ">
-        <div class="cards">
+        <div class="cards" >
         <?php
 
           $queryy="SELECT * FROM `news_article`  ORDER BY `news_article`.`publish_datetime` DESC ";
@@ -120,15 +120,9 @@
       </div>
 
     </div>
-    <div class="footer">
-          <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
-      <!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
-      <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <!-- <i class="fa fa-linkedin w3-hover-opacity"></i> -->
-        <p>Made by <a href="#" target="_blank">Code Freaks</a></p>
-    </div>
+<?php
+include "footer.php";
+?>
     
 
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

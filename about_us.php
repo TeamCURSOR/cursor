@@ -70,7 +70,7 @@
 		  </div>
 		  <div class="column middle ">
 			 <div class="curser_image">
-			 	<img  src="images/cursor1.svg" alt="CURSOR image">
+			 	<img  src="images/undefined/cursor1.svg" alt="CURSOR image">
 			 </div>
 		  </div>
 		</div>
@@ -234,13 +234,14 @@
 				</div>
 		    </div>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-top:70px;">
 			<header>
-		    	<h2 style="margin:70px;"></h2>
+		    	<h2 ></h2>
 		    	<h2>Council Intro Video</h2>
 			</header>			
-	  		<div class="column full" >
-            <iframe min-width="280" min-height="157.5" src="https://www.youtube.com/embed/X1MRGHnGonM?rel=0" frameborder="0" allowfullscreen></iframe>
+	  		<div class="column full"  >
+            <iframe style="width: 100%; 
+    height: 53.44vw;" min-width="280px" min-height="157.5px" width="300vw" height="=150vh" src="https://www.youtube.com/embed/X1MRGHnGonM?rel=0" frameborder="0" allowfullscreen poster="images/undefined/hqdefault.jpg"></iframe>
 		    </div>		
 		</div>
 		<div class="row">
@@ -248,7 +249,7 @@
 		    	<h2 style="margin:70px;"></h2>
 			</header>			
 	  		<div class="column full"  >
-	  			<div style="position: relative;">
+	  			<div style="position: relative; min-height: 70vh">
 					<div class="massive-typo-text typo-contact" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">	      
 				    </div> 	  			
 					<div class="contact_info" >				
@@ -260,15 +261,9 @@
 				</div>
 		    </div>		
 		</div>
-		<div class="footer">
-	        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-			<!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
-			<!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
-			<!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
-			<i class="fa fa-twitter w3-hover-opacity"></i>
-			<!-- <i class="fa fa-linkedin w3-hover-opacity"></i> -->
-		  	<p>Made by <a href="#" target="_blank">Code Freaks</a></p>
-		</div>
+<?php
+include "footer.php";
+?>
 			<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 			<!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 			<script src="js/lib/jquery/jquery.min.js"></script>  -->

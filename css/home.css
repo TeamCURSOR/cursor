@@ -52,7 +52,7 @@ nav a, button{
     min-height: 48px;
     min-width: 48px;
 } 
-h1,h2,h3,p{
+h1,h2,h3,p,pre{
     color:white;
 }
 .header h1, .header p{
@@ -261,37 +261,37 @@ width: 80px;
     transform: scale(1.2);
 }
 .typo-about-us {
-    background-image: url("../ai_svg/ABOUT_US_05.svg");
+    background-image: url("../images/ai_svg/ABOUT_US_05.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 85vw;
 }
 .typo-home {
-    background-image: url("../ai_svg/CURSOR_05.svg");
+    background-image: url("../images/ai_svg/CURSOR_05.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 85vw;
 }
 .typo-events {
-    background-image: url("../ai_svg/EVENTS_05.svg");
+    background-image: url("../images/ai_svg/EVENTS_05.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 85vw;
 }
 .typo-gallary {
-    background-image: url("../ai_svg/GALLARY_05.svg");
+    background-image: url("../images/ai_svg/GALLERY_05.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 85vw;
 }
 .typo-news {
-    background-image: url("../ai_svg/NEWS_1_05.svg");
+    background-image: url("../images/ai_svg/NEWS_1_05.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 85vw;
 }
 .typo-contact {
-    background-image: url("../ai_svg/CONTACT_05.svg");
+    background-image: url("../images/ai_svg/CONTACT_05.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 85vw;
@@ -305,7 +305,7 @@ width: 80px;
     top: -150px;
 }
 .typo-members {
-    background-image: url("../ai_svg/MEMBERS_05.svg");
+    background-image: url("../images/ai_svg/MEMBERS_05.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 85vw;
