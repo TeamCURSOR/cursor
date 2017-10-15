@@ -11,6 +11,15 @@
         background-color: #627AEF ;
       }
     </style>
+		    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107486826-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments)};
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-107486826-1');
+		</script>
 	</head>
 	<body>
 		<!-- Header -->		

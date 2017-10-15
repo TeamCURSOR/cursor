@@ -1,15 +1,5 @@
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password ="";
-  $dbname ="cursor_db1";
-  //Create connection
-  $conn = new mysqli($servername,$username,$password, $dbname);
-
-  //Check connection
-  if (mysqli_connect_error()) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
+ include 'connection.php';
 
 ?>
 
@@ -26,6 +16,15 @@
 				background-color: white ;
 			}
 		</style>
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107486826-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107486826-1');
+</script>
 	</head>
 	<body>
 	<?php
@@ -63,10 +62,10 @@
 			</header>
 		  <div class="column middle" style="padding: 0 5%; line-height: 2em">
 		  	<h3 style="color: #e70538;">CURSOR</h3>
-		    <p>We are the students organization of computer department of GEC.</p>
-		    <p> Department has helped inculcate a conducive environment in the campus which ignites young minds that prepare engineeringrs who could find technical solution to daily life problems.</p>
-		    <p> The sole mission of CURSOR is to imporve technical skills of students for which we promote and hold various technical events throughout the year and provide young minds with infinite opportunities.</p>
-		    <p> The events held include various technical workshops, hackathon codies(coding events) technical talks etc.</p>
+		    <p>We are the students' organization of computer department of GEC.</p>
+		    <p> The department has helped inculcate a conducive environment in the campus which ignites young minds that prepare engineers who could find technical solution to daily life problems.</p>
+		    <p> The sole mission of CURSOR is to improve technical skills of students for which we promote and hold various technical events throughout the year and provide young minds with infinite opportunities.</p>
+		    <p> The events held include various technical workshops, hackathon, coding events, technical talks etc.</p>
 		  </div>
 		  <div class="column middle ">
 		  	<div class="evntposter">
@@ -101,7 +100,7 @@
 		</div>
 		<div class="row">
 			<header>
-		    	<h2>GALLARY</h2>
+		    	<h2>GALLERY</h2>
 			</header>			
 			 <div class="column full">
 			    <?php
@@ -121,3 +120,8 @@ include "footer.php";
 	    <script src="js/folding_cards.js"></script>
 	</body>
 </html>
+
+<?php
+
+	$conn->close();
+?>

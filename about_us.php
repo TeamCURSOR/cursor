@@ -12,6 +12,15 @@
 			    background-color:#F24369;
 			}
 		</style>
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107486826-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments)};
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-107486826-1');
+		</script>
 	</head>
 	<body>
 	<?php
@@ -25,9 +34,9 @@
 		<!-- <style type="text/css">
 		</style> -->
 
-		<div id="project" class="red" style="height: 70vh;">  
+		<div id="project" class="red" style="height: 40vh;">  
 			<div class="introduction-text">
-				<div class="vertical-text vertical-project dark-copy" style=" opacity: 1;  /*! transform: matrix(0, -1, 1.03527, 0, 0, 0); */">2017-18
+				<div class="vertical-text vertical-project dark-copy" style="/* opacity: 1*/;  /*! transform: matrix(0, -1, 1.03527, 0, 0, 0); */">2017-18
 				</div>
 				<div class="intro-main main-project"> 
 					<h1 class="dark-copy">

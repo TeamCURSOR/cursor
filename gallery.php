@@ -1,15 +1,5 @@
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password ="";
-  $dbname ="cursor_db1";
-  //Create connection
-  $conn = new mysqli($servername,$username,$password, $dbname);
-
-  //Check connection
-  if (mysqli_connect_error()) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
+ include 'connection.php';
 
 ?>
 
@@ -27,6 +17,15 @@
             background-color:#00EF8F;
       }
     </style>    
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107486826-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-107486826-1');
+    </script>
   </head>
   <body>
   <?php
@@ -154,3 +153,9 @@ include "footer.php";
     
   </body>
 </html>
+
+
+<?php
+
+  $conn->close();
+?>

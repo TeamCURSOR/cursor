@@ -1,15 +1,5 @@
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password ="";
-  $dbname ="cursor_db1";
-  //Create connection
-  $conn = new mysqli($servername,$username,$password, $dbname);
-
-  //Check connection
-  if (mysqli_connect_error()) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
+ include 'connection.php';
 
 ?>
 
@@ -27,12 +17,21 @@
     background-color: #F3A750;
       }
     </style>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107486826-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-107486826-1');
+    </script>
   </head>
   <body>
   <?php
     include "nav.php";
   ?>
-      <div id="project" class="yellow" style="height: 70vh;">  
+      <div id="project" class="yellow" style="height: 40vh;">  
         <div class="introduction-text">
           <div class="vertical-text vertical-project dark-copy" style="/*! opacity: 1; */ /*! transform: matrix(0, -1, 1.03527, 0, 0, 0); */">2017-18
           </div>
@@ -118,3 +117,9 @@ include "footer.php";
     
   </body>
 </html>
+
+
+<?php
+
+  $conn->close();
+?>
