@@ -1,15 +1,5 @@
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password ="";
-  $dbname ="cursor_db1";
-  //Create connection
-  $conn = new mysqli($servername,$username,$password, $dbname);
-
-  //Check connection
-  if (mysqli_connect_error()) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
+ include 'connection.php';
 
 ?>
 
@@ -21,25 +11,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/gallary.css">
+    <link rel="stylesheet" href="css/gallery.css">
     <style type="text/css">
       .topnav{
             background-color:#00EF8F;
       }
     </style>    
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107486826-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-107486826-1');
+    </script>
   </head>
   <body>
   <?php
     include "nav.php";
   ?>
 
-    <div id="project" class="green" style="height: 70vh;">  
+    <div id="project" class="green" style="height: 40vh;">  
       <div class="introduction-text">
         <div class="vertical-text vertical-project dark-copy" style="/*! opacity: 1; */ /*! transform: matrix(0, -1, 1.03527, 0, 0, 0); */">2017-18
         </div>
         <div class="intro-main main-project"> 
           <h1 class="dark-copy">
-            <div style="position: relative; display: inline-block; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">GALLARY
+            <div style=" position: relative; display: inline-block; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);  " >Gallery
             </div>
           </h1> 
           <h2 class="dark-copy">
@@ -59,6 +58,7 @@
 
     <div class="row">
       <header>
+            <h2 style="margin:70px;"></h2>
           <h2>Council Intro videos</h2>
       </header>
 
@@ -116,13 +116,15 @@
     
     <div class="row">
       <header>
-          <h2>Photo Gallary</h2>
+                <h2 style="margin:70px;"></h2>
+          <h2>Photo Gallery</h2>
+          <pre style="font-size: 14px; color: white;">under beta</pre>
       </header>
 
       <div class="column ">
       	<ul>
       		<?php
-      			$queryy="SELECT * FROM `media` Limit 10 OFFSET 20;";
+      			$queryy="SELECT * FROM `media` WHERE `grp_id` not in ('undefined', 'ai_svg', 'events') GROUP BY `grp_id` Limit 10  ";
       			$result = $conn->query($queryy);
 
       			if($result->num_rows >0)
@@ -133,7 +135,7 @@
 	      	<li class="photo">
 	      		<div>
 	      			<img src="<?php echo $row['media_path']."/".$row['media_name'] ?>">
-	      			<a >Photo</a>
+	      			<a ><?php echo $row['grp_id'];?></a>
 	      		</div>
 	      	</li>
       		<?php
@@ -145,15 +147,15 @@
       </div>
 
     </div>
-    <div class="footer">
-          <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
-      <!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
-      <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <!-- <i class="fa fa-linkedin w3-hover-opacity"></i> -->
-        <p>Made by <a href="#" target="_blank">Code Freaks</a></p>
-    </div>
+<?php
+include "footer.php";
+?>
     
   </body>
 </html>
+
+
+<?php
+
+  $conn->close();
+?>

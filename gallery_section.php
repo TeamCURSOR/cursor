@@ -1,7 +1,7 @@
 <ul>
-    <link rel="stylesheet" href="css/gallary.css">
+    <link rel="stylesheet" href="css/gallery.css">
 	<?php
-		$queryy="SELECT * FROM `media` Limit 6 offset 31;";
+		$queryy="SELECT * FROM `media` WHERE `grp_id` not in ('undefined', 'ai_svg', 'events') GROUP BY `grp_id` Limit 10 ;";
 		$result = $conn->query($queryy);
 
 		if($result->num_rows >0)
@@ -12,7 +12,7 @@
 	<li class="photo">
 		<div>
 			<img src="<?php echo $row['media_path']."/".$row['media_name'] ?>">
-			<a >Photo</a>
+  			<a ><?php echo $row['grp_id'];?></a>
 		</div>
 	</li>
 	<?php
