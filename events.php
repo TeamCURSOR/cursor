@@ -62,11 +62,11 @@
       </header>
 
       <div class="column full" style="height: 500px;padding:0 10%;">
-      	<!-- <ul>
+      	
       		<?php
       			/*$queryy="SELECT * FROM `event` join `event_coordinator` on `event`.`event_id` = `event_coordinator`.`event_id` join `coordinator` on `event_coordinator`.`coordinator_id` =`coordinator`.`id`";*/
 
-            $queryy="SELECT * FROM `event` ;";
+            $queryy="SELECT * FROM `event` join `media` ON `event`.`media_id`=`media`.`media_id` ";
       			$result = $conn->query($queryy);
 
       			if($result->num_rows >0)
@@ -75,16 +75,25 @@
       				{
                   $query2="SELECT * FROM `coordinator` join ( Select * from `event_coordinator` WHERE `event_id`=".$row["event_id"]." ) as `t` on `t`.`coordinator_id` =`coordinator`.`id` ;";
       		?>
-	      	<li >
-            <div class="photo">
-  	      		<div>
-  	      			<img src="<?php echo $row['photo_link'] ;?>">
-  	      			<a ><?php echo $row['title'];?></a>
-  	      		</div>
-                <p><?php echo $row['info'];?></p>                
+
+	      	      
+          <div class="shop-card">
+            <div class="title">
+              <a ><?php echo $row['title'];?></a>
+            </div>
+            <div class="desc">
+              <?php echo $row['description'];?>
+            </div>
+            <div class="slider">
+              <figure data-color="#E24938, #A30F22">
+                <img src="<?php echo $row['media_path'].'/'.$row['media_name'] ;?>">
+              </figure>
+              <figure data-color="#E24938, #A30F22">
+                                
                 <p><?php echo $row['requirements'];?></p>
                 <p><?php echo $row['last_reg_date'];?></p>
-
+              </figure>
+              <figure>
                 <?php
                   $subresult = $conn->query($query2);
 
@@ -99,23 +108,36 @@
                   }
                 }
                   ?>
+              </figure>
             </div>
-	      	</li>
+            <div class="cta">
+              <div class="price">
+                <?php echo $row['reg_fee_info'];?>
+              </div>
+              
+              <!-- <button class="btn">Add to cart<span class="bg"></span></button> -->
+            </div>
+
+	      	</div>
+
       		<?php
       			}
           }
       		?>
-	    </ul> -->
 
-      <img style="opacity: .2; margin-top:200px; margin-top:20vh" src="images/ai_svg/COMING_SOON.svg">
+
+      <!-- <img style="opacity: .2; margin-top:200px; margin-top:20vh" src="images/ai_svg/COMING_SOON.svg"> -->
+      
       </div>
-
     </div>
+
+
 <?php
 include "footer.php";
 ?>
     
   </body>
+      <script src="js/events.js"></script>
 </html>
 
 

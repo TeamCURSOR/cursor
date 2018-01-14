@@ -140,7 +140,7 @@
               foreach (explode(',', $row['image_paths']) as $imagePath) {
                 # code...
               ?>
-	      			  <img style="max-width: 200px;" src="<?php echo $imagePath ?>">
+	      			  <img src="<?php echo $imagePath ?>">
               <?php
                 }
               ?> 
@@ -159,8 +159,20 @@
 
 <!--  -->
 
-
-
+<div id="main" class="container">
+  <h1 class="text-center">pure CSS albums gallery</h1>
+  <div id="gallery" class="row">
+    <div class="col-xs-4 gallery-item">
+      <div class="album">
+        <img src="http://lorempixel.com/400/400/sports/" alt="" />
+        <img src="http://lorempixel.com/400/400/nature/" alt="" />
+        <img src="http://lorempixel.com/400/400/animals/" alt="" />
+      </div>
+      <p>Holidays</p>
+    </div>
+  
+  </div>
+</div>
 <!--  -->
 
 <?php
