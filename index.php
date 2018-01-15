@@ -80,11 +80,13 @@
 		    	<h2>EVENTS</h2>
 			</header>
 
-		   <div class="column full" style="height: 500px;padding:0 10%;">
-		      <img style="opacity: .2; margin-top:200px; margin-top:20vh" src="images/ai_svg/COMING_SOON.svg">
-      </div>
+		   <div class="column full" >		 
+		    <?php
+		    	include"event_section.php";
+		    ?>
 		  </div>
 		</div>
+
 
 		<div class="row">
 			<header>
@@ -96,8 +98,8 @@
 		    	include"news_section.php";
 		    ?>
 		  </div>
-
 		</div>
+
 		<div class="row">
 			<header>
 		    	<h2>GALLERY</h2>

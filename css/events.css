@@ -17,14 +17,14 @@ ul{
   background-attachment: scroll;
   text-decoration: none;
   color: #000;
-  background: #fff;
-  display: inline-block;
+  /*background: #fff;*/
+  /*display: inline-block;*/
   min-height: 13em;
   max-width: 20em;
   padding: .5em;
-  -moz-box-shadow: 5px 5px 7px rgba(33,33,33,1);
+  /*-moz-box-shadow: 5px 5px 7px rgba(33,33,33,1);
   -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);*/
   -moz-transition: -moz-transform .15s linear;
   -o-transition: -o-transform .15s linear;
   -webkit-transition: -webkit-transform .15s linear;
@@ -56,8 +56,8 @@ ul{
 }
 .photo div img{
   max-width: 100%;
-  margin-top: -5%;
-  margin-left: -15%;
+  /*margin-top: -5%;
+  margin-left: -15%;*/
   -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5)) !important;
 }
 
@@ -89,10 +89,14 @@ ol li a{color:#fff;}
 Shop Card
 ---------------------*/
 .shop-card {
-  /*position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
+  position: relative;
+  /*float: right;
+  clear: left;*/
+  margin:10px;
+  display: inline-block;
+  /*top: 50%;
+  left: 50%;*/
+  /*-webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);*/
   width: 350px;
   background: #f5f5f5;
@@ -101,8 +105,11 @@ Shop Card
   overflow: hidden;
   border-radius: 5px;
   padding: 25px;
-  text-align: center;
+  /*text-align: center;*/
   z-index: 2;
+}
+.shop-card .title ,.shop-card .desc{
+  text-align: center;
 }
 .shop-card figure {
   margin: 0;
@@ -111,8 +118,11 @@ Shop Card
   outline: none !important;
 }
 .shop-card figure img {
-  margin: -95px 0 -60px;
+  /*margin: -95px 0 -60px;*/
   width: 100%;
+}
+.shop-card figure p{
+  color: black;
 }
 .shop-card .title {
   font-weight: 900;
@@ -127,7 +137,7 @@ Shop Card
   margin-bottom: 3px;
 }
 .shop-card .cta {
-  padding: 20px 20px 5px;
+  padding: 10px 0px 5px;
 }
 .shop-card .cta::after {
   content: '';
@@ -137,8 +147,8 @@ Shop Card
 .shop-card .price {
   float: left;
   color: #FF3100;
-  font-size: 22px;
-  font-weight: 900;
+  font-size: 20px;
+  /*font-weight: 900;*/
   padding-top: 2px;
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;

@@ -61,7 +61,7 @@
           <h2></h2>
       </header>
 
-      <div class="column full" style="height: 500px;padding:0 10%;">
+      <div class="column full" style="padding:10%;">
       	
       		<?php
       			/*$queryy="SELECT * FROM `event` join `event_coordinator` on `event`.`event_id` = `event_coordinator`.`event_id` join `coordinator` on `event_coordinator`.`coordinator_id` =`coordinator`.`id`";*/
@@ -102,8 +102,10 @@
                     while($subrow = $subresult->fetch_assoc())
                     {
                 ?>
-                <p><?php echo $subrow['name'];?></p>
-                <p><?php echo $subrow['contact_no'];?></p>
+                <p>
+                  <?php echo $subrow['name'];?> &nbsp
+                  <?php echo $subrow['contact_no'];?>                    
+                </p>
                   <?php
                   }
                 }

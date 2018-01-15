@@ -133,19 +133,19 @@
       				while($row = $result->fetch_assoc())
       				{
       		?>
-	      	<li class="photo">
-	      		<div>
+	      	<li class="photo ">
+	      		<div class="album">
               
               <?php
               foreach (explode(',', $row['image_paths']) as $imagePath) {
                 # code...
               ?>
-	      			  <img style="max-width: 200px;" src="<?php echo $imagePath ?>">
+	      			  <img src="<?php echo $imagePath ?>">
               <?php
                 }
-              ?> 
-	      			<a ><?php echo $row['grp_id'];?></a>
+              ?> 	      			
 	      		</div>
+            <p><?php echo $row['grp_id'];?></p>
 	      	</li>
       		<?php
 
