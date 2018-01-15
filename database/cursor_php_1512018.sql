@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2017 at 01:17 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Jan 14, 2018 at 07:48 PM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -57,9 +59,10 @@ CREATE TABLE `event` (
   `event_id` int(11) NOT NULL,
   `grp_id` int(11) DEFAULT NULL,
   `title` varchar(50) NOT NULL,
+  `description` text NOT NULL,
   `event_type` enum('talks','debates','workshop','competition','exebition','hackathon','meets','other') NOT NULL,
-  `photo_link` text,
-  `info` text,
+  `media_id` varchar(20) DEFAULT NULL,
+  `reg_fee_info` text,
   `requirements` text,
   `last_reg_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -68,13 +71,13 @@ CREATE TABLE `event` (
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`event_id`, `grp_id`, `title`, `event_type`, `photo_link`, `info`, `requirements`, `last_reg_date`) VALUES
-(1, 1, 'code it', 'competition', 'images/3.jpg', 'Registration fees 50/- per team(of 2 members)\r\nRegister online and get a discount of 10/-', NULL, NULL),
-(2, 1, 'Treasure Hunt', 'competition', 'images/4.jpg', 'Registration fees 50/-\r\nPer Team(2 members)', NULL, NULL),
-(3, 1, 'Darts', 'competition', 'images/5.jpg', 'Registration fees 20/- for 1st 3 tries\r\n10 for subsequent tries', NULL, NULL),
-(4, 1, 'Photographia', 'competition', 'images/6.jpg', 'Themes \r\nFramed \r\nRusted\r\n10/- per entry \r\n(unlimited entries)\r\nsubmit entries at registration desk before 4:30 PM', NULL, NULL),
-(5, 1, 'Speed Typing', 'competition', 'images/2.jpg', 'Registration Fee 10/- per try', NULL, NULL),
-(9, NULL, 'Arduino Workshop', 'workshop', 'images/9.jpg', 'Learn How to Use arduino board\r\nand sensors', NULL, NULL);
+INSERT INTO `event` (`event_id`, `grp_id`, `title`, `description`, `event_type`, `media_id`, `reg_fee_info`, `requirements`, `last_reg_date`) VALUES
+(1, 1, 'code it', '', 'competition', '1567', 'Registration fees 50/- per team(of 2 members)\r\nRegister online and get a discount of 10/-', NULL, NULL),
+(2, 1, 'Treasure Hunt', '', 'competition', '1568', 'Registration fees 50/-\r\nPer Team(2 members)', NULL, NULL),
+(3, 1, 'Darts', '', 'competition', '1569', 'Registration fees 20/- for 1st 3 tries\r\n10 for subsequent tries', NULL, NULL),
+(4, 1, 'Photographia', '', 'competition', '1570', 'Themes \r\nFramed \r\nRusted\r\n10/- per entry \r\n(unlimited entries)\r\nsubmit entries at registration desk before 4:30 PM', NULL, NULL),
+(5, 1, 'Speed Typing', '', 'competition', '1566', 'Registration Fee 10/- per try', NULL, NULL),
+(9, NULL, 'Arduino Workshop', 'Learn How to Use arduino board and sensors', 'workshop', '1573', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -101,31 +104,6 @@ INSERT INTO `event_coordinator` (`event_id`, `coordinator_id`) VALUES
 (4, 7),
 (4, 8),
 (5, 9);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `event_sponsor`
---
-
-CREATE TABLE `event_sponsor` (
-  `event_id` int(11) NOT NULL,
-  `sponsor_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `host`
---
-
-CREATE TABLE `host` (
-  `id` int(11) NOT NULL,
-  `name` varchar(70) NOT NULL,
-  `event_id` int(11) NOT NULL,
-  `photo_link` text NOT NULL,
-  `info` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -372,56 +350,6 @@ INSERT INTO `news_article` (`id`, `heading`, `subheading`, `description`, `image
 (6, 'CURSOR INAUGURATION', ' 2017-18', 'The ceremonious installation of new students\' council, CURSOR of Computer department, Goa College of Engineering, Farmagudi was held at the IT department seminar hall on Tuesday, 12 th September 2017.', 'images/news_photos/council_installation2017_18.jpg', '2017-09-13 04:08:38', 'newsPage/Installation2017_18.php'),
 (7, 'ARDUINO WORKSHOP', 'HELD AT GEC BY CURSOR', 'Team CURSOR, the student council of computer department, Goa college of Engineering, Farmagudi organized a two day Arduino workshop. It was conducted by three second year students Shonal Fernandes, Rohan Shirodkar from the Computer Department  and Jeremiah Rebello from the Electronic Engineering department.', 'images/news_photos/arduino.JPG', '2017-09-18 04:08:38', 'newsPage/arduino.php');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `qna`
---
-
-CREATE TABLE `qna` (
-  `eventid` int(11) NOT NULL,
-  `qn` text NOT NULL,
-  `ans` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `schedule`
---
-
-CREATE TABLE `schedule` (
-  `eventid` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `venue` varchar(60) NOT NULL,
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `schedule_time`
---
-
-CREATE TABLE `schedule_time` (
-  `schedule_id` int(11) NOT NULL,
-  `time` time NOT NULL,
-  `plan` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sponsor`
---
-
-CREATE TABLE `sponsor` (
-  `id` int(11) NOT NULL,
-  `name` varchar(60) NOT NULL,
-  `info` text NOT NULL,
-  `logo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Indexes for dumped tables
 --
@@ -439,12 +367,6 @@ ALTER TABLE `event`
   ADD PRIMARY KEY (`event_id`);
 
 --
--- Indexes for table `host`
---
-ALTER TABLE `host`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `media`
 --
 ALTER TABLE `media`
@@ -457,18 +379,6 @@ ALTER TABLE `news_article`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `schedule`
---
-ALTER TABLE `schedule`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sponsor`
---
-ALTER TABLE `sponsor`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -477,36 +387,26 @@ ALTER TABLE `sponsor`
 --
 ALTER TABLE `coordinator`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
   MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `host`
---
-ALTER TABLE `host`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
   MODIFY `media_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1610;
+
 --
 -- AUTO_INCREMENT for table `news_article`
 --
 ALTER TABLE `news_article`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `schedule`
---
-ALTER TABLE `schedule`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `sponsor`
---
-ALTER TABLE `sponsor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
