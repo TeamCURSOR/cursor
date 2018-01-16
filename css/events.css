@@ -88,7 +88,7 @@ ol li a{color:#fff;}
 /*--------------------
 Shop Card
 ---------------------*/
-.shop-card {
+.event-card {
   position: relative;
   /*float: right;
   clear: left;*/
@@ -108,43 +108,43 @@ Shop Card
   /*text-align: center;*/
   z-index: 2;
 }
-.shop-card .title ,.shop-card .desc{
+.event-card .title ,.event-card .desc{
   text-align: center;
 }
-.shop-card figure {
+.event-card figure {
   margin: 0;
   padding: 0;
   overflow: hidden;
   outline: none !important;
 }
-.shop-card figure img {
+.event-card figure img {
   /*margin: -95px 0 -60px;*/
   width: 100%;
 }
-.shop-card figure p{
+.event-card figure p{
   color: black;
 }
-.shop-card .title {
+.event-card .title {
   font-weight: 900;
   text-transform: uppercase;
   font-size: 30px;
   color: #23211f;
   margin-bottom: 5px;
 }
-.shop-card .desc {
+.event-card .desc {
   font-size: 17px;
   opacity: .8;
   margin-bottom: 3px;
 }
-.shop-card .cta {
+.event-card .cta {
   padding: 10px 0px 5px;
 }
-.shop-card .cta::after {
+.event-card .cta::after {
   content: '';
   display: table;
   clear: both;
 }
-.shop-card .price {
+.event-card .price {
   float: left;
   color: #FF3100;
   font-size: 20px;
@@ -154,7 +154,7 @@ Shop Card
   transition: color .3s ease-in-out;
   margin-top: 4px;
 }
-.shop-card .btn {
+.event-card .btn {
   position: relative;
   z-index: 1;
   float: right;
@@ -175,7 +175,7 @@ Shop Card
   border-radius: 20px;
   overflow: hidden;
 }
-.shop-card .btn .bg {
+.event-card .btn .bg {
   width: 101%;
   height: 101%;
   display: block !important;
@@ -185,11 +185,11 @@ Shop Card
   transition: all .3s ease-in-out;
   background: linear-gradient(135deg, #a61322, #d33f34);
 }
-.shop-card .btn:hover {
+.event-card .btn:hover {
   color: #fff !important;
   border: 1px solid transparent !important;
 }
-.shop-card .btn:hover .bg {
+.event-card .btn:hover .bg {
   opacity: 1;
 }
 

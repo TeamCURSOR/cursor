@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2018 at 07:48 PM
+-- Generation Time: Jan 16, 2018 at 06:20 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -64,20 +64,22 @@ CREATE TABLE `event` (
   `media_id` varchar(20) DEFAULT NULL,
   `reg_fee_info` text,
   `requirements` text,
-  `last_reg_date` datetime DEFAULT NULL
+  `location` text NOT NULL,
+  `last_reg_date` datetime DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`event_id`, `grp_id`, `title`, `description`, `event_type`, `media_id`, `reg_fee_info`, `requirements`, `last_reg_date`) VALUES
-(1, 1, 'code it', '', 'competition', '1567', 'Registration fees 50/- per team(of 2 members)\r\nRegister online and get a discount of 10/-', NULL, NULL),
-(2, 1, 'Treasure Hunt', '', 'competition', '1568', 'Registration fees 50/-\r\nPer Team(2 members)', NULL, NULL),
-(3, 1, 'Darts', '', 'competition', '1569', 'Registration fees 20/- for 1st 3 tries\r\n10 for subsequent tries', NULL, NULL),
-(4, 1, 'Photographia', '', 'competition', '1570', 'Themes \r\nFramed \r\nRusted\r\n10/- per entry \r\n(unlimited entries)\r\nsubmit entries at registration desk before 4:30 PM', NULL, NULL),
-(5, 1, 'Speed Typing', '', 'competition', '1566', 'Registration Fee 10/- per try', NULL, NULL),
-(9, NULL, 'Arduino Workshop', 'Learn How to Use arduino board and sensors', 'workshop', '1573', '', NULL, NULL);
+INSERT INTO `event` (`event_id`, `grp_id`, `title`, `description`, `event_type`, `media_id`, `reg_fee_info`, `requirements`, `location`, `last_reg_date`, `timestamp`) VALUES
+(1, 1, 'code it', '', 'competition', '1567', 'Registration fees 50/- per team(of 2 members)\r\nRegister online and get a discount of 10/-', NULL, '', NULL, '2018-01-15 14:21:13'),
+(2, 1, 'Treasure Hunt', '', 'competition', '1568', 'Registration fees 50/-\r\nPer Team(2 members)', NULL, '', NULL, '2018-01-15 14:21:13'),
+(3, 1, 'Darts', '', 'competition', '1569', 'Registration fees 20/- for 1st 3 tries\r\n10 for subsequent tries', NULL, '', NULL, '2018-01-15 14:21:13'),
+(4, 1, 'Photographia', '', 'competition', '1570', 'Themes \r\nFramed \r\nRusted\r\n10/- per entry \r\n(unlimited entries)\r\nsubmit entries at registration desk before 4:30 PM', NULL, '', NULL, '2018-01-15 14:21:13'),
+(5, 1, 'Speed Typing', '', 'competition', '1566', 'Registration Fee 10/- per try', NULL, '', NULL, '2018-01-15 14:21:13'),
+(9, NULL, 'Arduino Workshop', 'Learn How to Use arduino board and sensors', 'workshop', '1573', '', NULL, '', NULL, '2018-01-15 14:21:13');
 
 -- --------------------------------------------------------
 
@@ -104,6 +106,29 @@ INSERT INTO `event_coordinator` (`event_id`, `coordinator_id`) VALUES
 (4, 7),
 (4, 8),
 (5, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `grp_id` varchar(30) NOT NULL,
+  `gallary_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`grp_id`, `gallary_name`) VALUES
+('', ''),
+('codies', 'Codies'),
+('council_inaugration2017', 'Council Inaugration 2017'),
+('htmlworkshop2016', 'Html Workshop 2016'),
+('news_photos', 'News Photos'),
+('pythonwrkshop2016', 'Python Workshop 2016');
 
 -- --------------------------------------------------------
 
@@ -365,6 +390,12 @@ ALTER TABLE `coordinator`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`event_id`);
+
+--
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`grp_id`);
 
 --
 -- Indexes for table `media`

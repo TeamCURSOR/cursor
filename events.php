@@ -77,7 +77,7 @@
       		?>
 
 	      	      
-          <div class="shop-card">
+          <div class="event-card">
             <div class="title">
               <a ><?php echo $row['title'];?></a>
             </div>
@@ -116,8 +116,7 @@
               <div class="price">
                 <?php echo $row['reg_fee_info'];?>
               </div>
-              
-              <!-- <button class="btn">Add to cart<span class="bg"></span></button> -->
+                <button class="btn">Register<span class="bg"></span></button>
             </div>
 
 	      	</div>
