@@ -12,6 +12,10 @@
 
 
 		<!-- Google Analytics -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			(function(b,c){var $=b.jQuery||b.Cowboy||(b.Cowboy={}),a;$.throttle=a=function(e,f,j,i){var h,d=0;if(typeof f!=="boolean"){i=j;j=f;f=c}function g(){var o=this,m=+new Date()-d,n=arguments;function l(){d=+new Date();j.apply(o,n)}function k(){h=c}if(i&&!h){l()}h&&clearTimeout(h);if(i===c&&m>e){l()}else{if(f!==true){h=setTimeout(i?k:l,i===c?e-m:e)}}}if($.guid){g.guid=j.guid=j.guid||$.guid++}return g};$.debounce=function(d,e,f){return f===c?a(d,e,false):a(d,f,e!==false)}})(this);
+		</script>
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -20,11 +24,11 @@
 
 		ga('create', 'UA-113936784-1', 'auto');
 		ga('send', 'pageview');
-		// function timing(){
-		// 	ga('send', 'event', 'timeing', 'stayed', '10s');
-		// 	console.log("Playing");
-		// }
-		// setInterval(timing,10000);
+		function timing(){
+			ga('send', 'event', 'timeing', 'stayed', '10s');
+			console.log("Playing");
+		}
+		setInterval(timing,10000);
 
 		//
 		</script>
@@ -36,39 +40,50 @@
 		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScp_Ak-9sMb08Rc71aTh4hsdjHHGoOI0x3zPJ9ly78j3yzwYg/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 	</body>
 	<script type="text/javascript">
-		
-		var winheight, docheight, trackLength, throttlescroll
-	 	function getDocHeight() {
-		    var D = document;
-		    return Math.max(
-		        D.body.scrollHeight, D.documentElement.scrollHeight,
-		        D.body.offsetHeight, D.documentElement.offsetHeight,
-		        D.body.clientHeight, D.documentElement.clientHeight
-		    )
-		}
-		function getmeasurements(){
-		    winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
-		    docheight = getDocHeight()
-		    trackLength = docheight - winheight
-		}
-		 
-		function amountscrolled(){
-		    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
-		    var pctScrolled = Math.floor(scrollTop/trackLength * 100) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
-		    console.log(pctScrolled + '% scrolled')
-		}
-		 
-		getmeasurements()
-		 
-		window.addEventListener("resize", function(){
-		    getmeasurements()
-		}, false)
-		 
-		window.addEventListener("scroll", function(){
-		    clearTimeout(throttlescroll)
-		        throttlescroll = setTimeout(function(){ // throttle code inside scroll to once every 50 milliseconds
-		        amountscrolled()
-		    }, 50)
-		}, false)
+			
+	// 		var iframe = document.body.firstElementChild;
+
+	// $(function(){
+	  
+	//   var counter_1 = 0,
+	//       counter_2 = 0
+	//       last_time_1 = +new Date(),
+	//       last_time_2 = +new Date();
+	  
+	//   // This function is not throttled, but instead bound directly to the event.
+	//   function scroll_1() {
+	//     var now = +new Date(),
+	//       html = 'scroll handler executed: ' + counter_1++ + ' times'
+	//         + ' (' + ( now - last_time_1 ) + 'ms since previous execution)'
+	//         + '<br/>window scrollLeft: ' + $(window).scrollLeft() + ', scrollTop: ' + $(window).scrollTop();
+	    
+	//     last_time_1 = now;
+	    
+	//     console.log("html");
+	//   };
+	  
+	//   // This function is throttled, and the new, throttled, function is bound to
+	//   // the event. Note that in jQuery 1.4+ a reference to either the original or
+	//   // throttled function can be passed to .unbind to unbind the function.
+	//   function scroll_2() {
+	//     var now = +new Date(),
+	//       html = 'throttled scroll handler executed: ' + counter_2++ + ' times'
+	//         + ' (' + ( now - last_time_2 ) + 'ms since previous execution)'
+	//         + '<br/>window scrollLeft: ' + $(window).scrollLeft() + ', scrollTop: ' + $(window).scrollTop();
+	    
+	//     last_time_2 = now;
+	    
+	//     console.log("html");
+
+	//   };
+	  
+	//   // Bind the not-at-all throttled handler to the scroll event.
+	//   $(iframe).scroll( scroll_1 );
+	  
+	//   // Bind the throttled handler to the scroll event.
+	//   $(iframe).scroll( $.throttle( 250, scroll_2 ) ); // This is the line you want!
+	  
+	// });
+
 	</script>
 </html>
