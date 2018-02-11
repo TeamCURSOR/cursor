@@ -20,12 +20,11 @@
 
 		ga('create', 'UA-113936784-1', 'auto');
 		ga('send', 'pageview');
-		function videoPlay(){
-			ga('send', 'event', 'Videos', 'play', 'Fall Campaign');
+		function timing(){
+			ga('send', 'event', 'timeing', 'stayed', '10s');
 			console.log("Playing");
 		}
-		videoPlay();
-
+		setInterval(timing,10000);
 		</script>
 		<!-- End Google Analytics -->
 	</head>
