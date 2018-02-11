@@ -29,7 +29,14 @@
 		//
 
 		var winheight, docheight, trackLength, throttlescroll
- 
+		 	function getDocHeight() {
+		    var D = document;
+		    return Math.max(
+		        D.body.scrollHeight, D.documentElement.scrollHeight,
+		        D.body.offsetHeight, D.documentElement.offsetHeight,
+		        D.body.clientHeight, D.documentElement.clientHeight
+		    )
+		}
 		function getmeasurements(){
 		    winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
 		    docheight = getDocHeight()
