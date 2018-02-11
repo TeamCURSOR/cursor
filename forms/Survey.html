@@ -20,8 +20,10 @@
 
 		ga('create', 'UA-113936784-1', 'auto');
 		ga('send', 'pageview');
-
-		ga('send', 'event', 'Videos', 'play', 'Fall Campaign');
+		function videoPlay(){
+			ga('send', 'event', 'Videos', 'play', 'Fall Campaign');
+			conole.log("Playing");
+		}
 
 		</script>
 		<!-- End Google Analytics -->
